@@ -1,0 +1,16 @@
+import random
+
+index = 1000000
+total = 0.0
+cards = list()
+for x in range(13):
+    for y in range(4):
+        cards.append(x+1)
+for i in range(index):
+    random.shuffle(cards)
+    counter = 0
+    for x in range(len(cards)-1):
+        if cards[x] == cards[x+1]:
+            counter += 1
+    total += counter
+print(total/index)
